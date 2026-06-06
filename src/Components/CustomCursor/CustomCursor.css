@@ -6,6 +6,6 @@
     height: var(--cursor-circle-size);
     border-radius: calc(var(--cursor-circle-size) / 2);
     backdrop-filter: var(--cursor-backdrop-filter);
-    z-index: 5;
+    z-index: 1000;
     pointer-events: none;
 }

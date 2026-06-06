@@ -1,1 +1,121 @@
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
 
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
+    background-color: #fff;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #fff;
+}
+
+/* ── Overlay panel ── */
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background-color: rgba(54, 55, 71, 0.92);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: 94px;
+    padding-right: 20px;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    pointer-events: none;
+}
+
+.nav-overlay--open {
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.nav-overlay--closing {
+    transform: translateX(100%);
+    pointer-events: none;
+}
+
+/* ── Nav items ── */
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 28px;
+}
+
+.nav-menu li {
+    opacity: 0;
+}
+
+/* open: items fly in from off-screen right, top to bottom */
+.nav-overlay--open .nav-menu li {
+    animation: navItemIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.nav-overlay--open .nav-menu li:nth-child(1) { animation-delay: 0.22s; }
+.nav-overlay--open .nav-menu li:nth-child(2) { animation-delay: 0.32s; }
+.nav-overlay--open .nav-menu li:nth-child(3) { animation-delay: 0.42s; }
+.nav-overlay--open .nav-menu li:nth-child(4) { animation-delay: 0.52s; }
+
+@keyframes navItemIn {
+    from {
+        opacity: 0;
+        transform: translateX(100vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* close: items fly out to off-screen right, bottom to top */
+.nav-overlay--closing .nav-menu li {
+    opacity: 1;
+    transform: translateX(0);
+    animation: navItemOut 0.28s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+.nav-overlay--closing .nav-menu li:nth-child(4) { animation-delay: 0s; }
+.nav-overlay--closing .nav-menu li:nth-child(3) { animation-delay: 0.06s; }
+.nav-overlay--closing .nav-menu li:nth-child(2) { animation-delay: 0.12s; }
+.nav-overlay--closing .nav-menu li:nth-child(1) { animation-delay: 0.18s; }
+
+@keyframes navItemOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100vw);
+    }
+}
+
+/* ── Links ── */
+.nav-menu a {
+    font-family: var(--default-font);
+    font-size: 2.5rem;
+    text-decoration: none;
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: opacity 0.2s ease;
+}
+
+.nav-menu a:hover {
+    opacity: 0.6;
+}
