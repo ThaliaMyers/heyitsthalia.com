@@ -1,0 +1,56 @@
+.bigName {
+    display: inline-block;
+    width: 90%;
+    font-size: 25cqi;
+    white-space: nowrap;
+    font-family: --default-header-font, monospace;
+    font-weight: bold;
+    background-image: var(--text-gradient);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    line-height: 0.8;
+    padding-bottom: 0.1em;
+    margin: 0;
+}
+
+@media (min-width: 576px) {
+    .bigName {
+        width: 60%;
+        font-size: 15cqi;
+    }
+}
+
+.nameSubtitle {
+    display: block;
+    font-family: --default-header-font, monospace;
+    font-weight: 500;
+    font-size: 6vw;
+    line-height: 0.8;
+}
+
+@media (min-width: 576px) {
+    .nameSubtitle {
+        font-size: 4vw;
+    }
+}
+
+
+.aboutMe {
+    display: block;
+    font-family: --default-font, monospace;
+    font-weight: 600;
+    font-size: 120%;
+    width: 90%;
+}
+
+@media (min-width: 576px) {
+    .aboutMe {
+        width: 50%;
+    }
+}
+
+.bigName, .nameSubtitle, .aboutMe {
+    position: relative;
+    z-index: 1;
+}

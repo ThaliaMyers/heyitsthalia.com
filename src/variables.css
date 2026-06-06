@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Roboto Mono';
+    src: local('Roboto Mono'), url(assets/fonts/RobotoMono.ttf) format('truetype');
+}
+
+:root {
+    --default-header-font: 'Roboto Mono', monospace;
+    --default-font: 'Roboto Mono', monospace;
+    --website-margins: 25px;
+
+    /* Website Colours */
+    --siteBackground: #363747;
+    --text-gradient-start: #426DC8;
+    --text-gradient-end: #C0ADFD;
+    --text-gradient: linear-gradient(to right, var(--text-gradient-start), var(--text-gradient-end));
+    --default-font-color: #FFFFFF;
+
+    /* Cursor Variables */
+    --cursor-circle-size: 50px;
+    --cursor-backdrop-filter: invert(1) grayscale(1);
+}

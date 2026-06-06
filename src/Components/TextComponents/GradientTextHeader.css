@@ -1,0 +1,9 @@
+.gradientHeader {
+    display: inline-block;
+    font-family: --default-header-font, monospace;
+    background-image: var(--text-gradient);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    line-height: 1.2;
+}

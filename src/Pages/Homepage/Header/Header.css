@@ -1,0 +1,36 @@
+
+body {
+    background-color: var(--siteBackground);
+    color: white;
+}
+
+.blueprintGrid {
+    position: absolute;
+    inset: 0;
+    background-color: transparent;
+    background-image:
+            linear-gradient(to right, #C0ADFD80 2px, transparent 2px),
+            linear-gradient(to bottom, #C0ADFD80 2px, transparent 2px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at 80% 50%, black 0%, transparent 40%);
+    -webkit-mask-image: radial-gradient(circle at 80% 50%, black 0%, transparent 40%);
+}
+
+.headerParent {
+    position: relative;
+    min-height: calc(100vh - 20px);
+    display: flex;
+    align-items: center;
+}
+
+.headerSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: var(--website-margins);
+}
+
+section {
+    container-type: inline-size;
+}
+

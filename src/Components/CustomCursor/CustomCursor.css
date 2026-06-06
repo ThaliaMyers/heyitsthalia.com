@@ -1,0 +1,11 @@
+.cursor {
+    position: fixed;
+    left: -8px;
+    top: -8px;
+    width: var(--cursor-circle-size);
+    height: var(--cursor-circle-size);
+    border-radius: calc(var(--cursor-circle-size) / 2);
+    backdrop-filter: var(--cursor-backdrop-filter);
+    z-index: 5;
+    pointer-events: none;
+}
