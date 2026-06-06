@@ -43,6 +43,12 @@ export default function NavigationMenu() {
                 <span className="hamburger-box">
                     <span className="hamburger-inner"></span>
                 </span>
+                <span className="menu-label-track">
+                    <span className={`menu-label-inner${menuExpanded && !isClosing ? ' menu-label-inner--open' : ''}`}>
+                        <span className="menu-label-text">Menu</span>
+                        <span className="menu-label-text">Close</span>
+                    </span>
+                </span>
             </button>
 
             <div className={overlayClass} onClick={closeMenu}>

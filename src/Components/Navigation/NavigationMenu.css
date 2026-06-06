@@ -3,6 +3,52 @@
     top: 20px;
     right: 20px;
     z-index: 100;
+    /* Capsule */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px 12px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #00000080;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition-property: opacity, filter, background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    cursor: pointer;
+}
+
+.hamburger:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Smaller icon: 26px wide, 2px tall bars, 7px gaps → 20px total box height */
+.hamburger-box {
+    width: 26px;
+    height: 20px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 26px;
+    height: 3px;
+}
+
+/* General (non-collapse) bar spacing */
+.hamburger-inner::before { top: -9px; }
+.hamburger-inner::after  { bottom: -9px; }
+
+/* Collapse variant: inner sits at bottom, after/before sit above it */
+.hamburger--collapse .hamburger-inner::after {
+    top: -18px;
+}
+
+/* Collapse active: inner must translate exactly the center-to-center distance (9px) */
+.hamburger--collapse.is-active .hamburger-inner {
+    transform: translate3d(0, -9px, 0) rotate(-45deg);
 }
 
 .hamburger .hamburger-inner,
@@ -15,6 +61,39 @@
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
     background-color: #fff;
+}
+
+/* Menu / Close label — slot-machine slide */
+.menu-label-track {
+    overflow: hidden;
+    height: 1.4em;
+    /* Fixed: wide enough for "Close" in Roboto Mono (~0.6em/char + letter-spacing) */
+    width: 3.6em;
+}
+
+.menu-label-inner {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.menu-label-inner--open {
+    /* -50% of inner height (2 × 1.4em) slides to show "Close" */
+    transform: translateY(-50%);
+}
+
+.menu-label-text {
+    height: 1.4em;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: var(--default-font);
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.08em;
+    user-select: none;
 }
 
 /* ── Overlay panel ── */
@@ -107,7 +186,8 @@
 /* ── Links ── */
 .nav-menu a {
     font-family: var(--default-font);
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-weight: bold;
     text-decoration: none;
     background: var(--text-gradient);
     -webkit-background-clip: text;
