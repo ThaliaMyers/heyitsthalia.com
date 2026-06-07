@@ -12,7 +12,6 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: #00000080;
     backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     transition-property: opacity, filter, background-color;
     transition-duration: 0.2s;
     transition-timing-function: linear;
@@ -102,7 +101,6 @@
     inset: 0;
     z-index: 99;
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(14px);
     background-color: rgba(54, 55, 71, 0.92);
     display: flex;
     align-items: flex-start;
@@ -191,7 +189,7 @@
     text-decoration: none;
     background: var(--text-gradient);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
     background-clip: text;
     transition: opacity 0.2s ease;
 }
