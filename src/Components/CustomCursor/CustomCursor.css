@@ -8,10 +8,10 @@
     backdrop-filter: var(--cursor-backdrop-filter);
     z-index: 1000;
     pointer-events: none;
-    display: none; /* hidden by default */
+    display: none;
 }
 
-@media (any-pointer: fine) {
+@media (pointer: fine) {
     .cursor {
         display: block;
     }
