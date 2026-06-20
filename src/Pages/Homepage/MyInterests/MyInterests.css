@@ -1,4 +1,14 @@
-.myInterestsHeader {
+/*Entire interests section of site*/
+.myInterests {
     margin-left: var(--website-margins);
     margin-right: var(--website-margins);
+}
+
+/*Header text of interests section*/
+.myInterestsHeader {}
+
+/*Style for subheadings of interests section*/
+.interestsSubheaderText {
+    font-family: var(--default-font);
+    color: var(--default-font-color);
 }

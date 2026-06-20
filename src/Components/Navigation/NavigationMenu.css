@@ -197,3 +197,7 @@
 .nav-menu a:hover {
     opacity: 0.6;
 }
+
+.nav-menu a.active {
+    color: white;
+}

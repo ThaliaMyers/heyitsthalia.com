@@ -1,6 +1,7 @@
 import './hamburgers.css'
 import './NavigationMenu.css'
 import {useState} from "react";
+import { NavLink} from "react-router";
 
 export default function NavigationMenu() {
     const [menuExpanded, setMenu] = useState(false);
@@ -35,32 +36,42 @@ export default function NavigationMenu() {
 
     return (
         <>
-            <button
-                className={`hamburger hamburger--collapse${menuExpanded && !isClosing ? ' is-active' : ''}`}
-                type="button"
-                onClick={toggleMenu}
-            >
-                <span className="hamburger-box">
-                    <span className="hamburger-inner"></span>
-                </span>
-                <span className="menu-label-track">
-                    <span className={`menu-label-inner${menuExpanded && !isClosing ? ' menu-label-inner--open' : ''}`}>
-                        <span className="menu-label-text">Menu</span>
-                        <span className="menu-label-text">Close</span>
+            <nav>
+                <button
+                    className={`hamburger hamburger--collapse${menuExpanded && !isClosing ? ' is-active' : ''}`}
+                    type="button"
+                    onClick={toggleMenu}
+                >
+                    <span className="hamburger-box">
+                        <span className="hamburger-inner"></span>
                     </span>
-                </span>
-            </button>
+                    <span className="menu-label-track">
+                        <span className={`menu-label-inner${menuExpanded && !isClosing ? ' menu-label-inner--open' : ''}`}>
+                            <span className="menu-label-text">Menu</span>
+                            <span className="menu-label-text">Close</span>
+                        </span>
+                    </span>
+                </button>
 
-            <div className={overlayClass} onClick={closeMenu}>
-                <nav className="nav-menu" onClick={(e) => e.stopPropagation()}>
-                    <ul>
-                        <li><a href="#home" onClick={closeMenu}>Home</a></li>
-                        <li><a href="#interests" onClick={closeMenu}>Projects</a></li>
-                        <li><a href="#projects" onClick={closeMenu}>About Me</a></li>
-                        <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+                <div className={overlayClass} onClick={closeMenu}>
+                    <nav className="nav-menu" onClick={(e) => e.stopPropagation()}>
+                        <ul>
+                            <li>
+                                <NavLink to="/" onClick={closeMenu}>Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/projects" onClick={closeMenu}>Projects</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/aboutme" onClick={closeMenu}>About Me</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
         </>
     )
 }

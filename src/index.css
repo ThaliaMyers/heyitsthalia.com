@@ -4,3 +4,10 @@ hr {
 /*body {*/
 /*    cursor: url("./cursor.png"), auto;");*/
 /*}*/
+
+body {
+    background-color: #363747;
+    /*margin: 25px;*/
+    margin: 0;
+}
+

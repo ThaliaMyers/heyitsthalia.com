@@ -1,6 +1,6 @@
 .bigName {
     display: inline-block;
-    width: 90%;
+    width: fit-content;
     font-size: 25cqi;
     white-space: nowrap;
     font-family: --default-header-font, monospace;
@@ -10,13 +10,14 @@
     background-clip: text;
     -webkit-background-clip: text;
     line-height: 0.8;
-    padding-bottom: 0.1em;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
     margin: 0;
 }
 
 @media (min-width: 576px) {
     .bigName {
-        width: 60%;
+        width: fit-content;
         font-size: 15cqi;
     }
 }
