@@ -1,5 +1,5 @@
-import './ContactHeader.css'
 import '../../Homepage/Header/Header.css'
+import './ContactHeader.css'
 
 export default function ContactHeader() {
     return (
@@ -8,7 +8,7 @@ export default function ContactHeader() {
                 <div className="blueprintGrid"></div>
                 <section className='headerSection'>
                     <h2 className='nameSubtitle'>Have Questions?</h2>
-                    <h1 className='bigName'>Contact Me</h1>
+                    <h1 className='bigName bigName--contactHeader'>Contact Me</h1>
                     <p className='aboutMe'>
                         Contact description
                     </p>

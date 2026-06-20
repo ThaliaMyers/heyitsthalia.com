@@ -24,7 +24,7 @@ export default function Header() {
                     <h2 className='nameSubtitle'>Hi, my name is</h2>
                     <h1 className='bigName'>Thalia</h1>
                     <p className='aboutMe'>
-                        Hi, I am {article} {age} year old developer/designer/source of chaos.
+                        I am {article} {age} year old developer/designer/source of chaos.
                         Technology is the creative manifestation of the jumble of
                         ideas I call my brain. Oh, and I'm also probably one of the
                         biggest nerds you'll ever meet.

@@ -7,8 +7,8 @@ export default function AboutMeHeader() {
             <div className='headerParent'>
                 <div className="blueprintGrid"></div>
                 <section className='headerSection'>
-                    <h2 className='nameSubtitle'>I'm cool. Here's some stuff</h2>
-                    <h1 className='bigName'>About Me</h1>
+                    <h2 className='nameSubtitle'>I'm cool.</h2>
+                    <h1 className='bigName bigName--aboutHeader'>About Me</h1>
                     <p className='aboutMe'>
                         Contact description
                     </p>

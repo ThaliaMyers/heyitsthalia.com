@@ -1,0 +1,9 @@
+.bigName--aboutHeader {
+    font-size: 18cqi;
+}
+
+@media (min-width: 576px) {
+    .bigName--aboutHeader {
+        font-size: 12cqi;
+    }
+}
