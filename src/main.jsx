@@ -8,10 +8,12 @@ import Homepage from "./Pages/Homepage/Homepage.jsx";
 import Contact from "./Pages/Contact/Contact.jsx";
 import NavigationMenu from "./Components/Navigation/NavigationMenu.jsx";
 import AboutMe from "./Pages/AboutMe/AboutMe.jsx";
+import ScrollToTop from "./Components/ScrollManagement/ScrollToTop/ScrollToTop.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
       <BrowserRouter>
+          <ScrollToTop />
           <NavigationMenu />
           <Routes>
               <Route path="/" element={<Homepage />} />
