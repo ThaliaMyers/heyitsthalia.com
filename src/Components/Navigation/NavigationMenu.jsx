@@ -1,6 +1,6 @@
 import './hamburgers.css'
 import './NavigationMenu.css'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import { NavLink} from "react-router";
 
 export default function NavigationMenu() {
@@ -27,6 +27,25 @@ export default function NavigationMenu() {
             openMenu();
         }
     };
+
+    // Handle menu open/close shortcut
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            // Ignore shortcuts when typing in an input
+            const tag = document.activeElement?.tagName;
+            if (tag === 'INPUT' || tag === 'TEXTAREA' || document.activeElement?.isContentEditable) return;
+
+            if (e.key === '/') {
+                e.preventDefault();
+                toggleMenu();
+            } else if (e.key === 'Escape' && menuExpanded && !isClosing) {
+                closeMenu();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [menuExpanded, isClosing]);
 
     const overlayClass = [
         'nav-overlay',
