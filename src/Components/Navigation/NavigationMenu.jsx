@@ -2,6 +2,7 @@ import './hamburgers.css'
 import './NavigationMenu.css'
 import {useEffect, useState} from "react";
 import { NavLink} from "react-router";
+import homeIcon from './home-icon-image.svg';
 
 export default function NavigationMenu() {
     const [menuExpanded, setMenu] = useState(false);
@@ -56,6 +57,9 @@ export default function NavigationMenu() {
     return (
         <>
             <nav>
+                <NavLink className="homeIcon" to="/" onClick={closeMenu}>
+                    <img src={homeIcon} alt="Home" />
+                </NavLink>
                 <button
                     className={`hamburger hamburger--collapse${menuExpanded && !isClosing ? ' is-active' : ''}`}
                     type="button"

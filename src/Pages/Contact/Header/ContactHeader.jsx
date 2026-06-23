@@ -9,8 +9,9 @@ export default function ContactHeader() {
                 <section className='headerSection'>
                     <h2 className='nameSubtitle'>Have Questions?</h2>
                     <h1 className='bigName bigName--contactHeader'>Contact Me</h1>
+                    {/*TODO: Make this description better in general.*/}
                     <p className='aboutMe'>
-                        Contact description
+                        Let me know of any questions, comments, or suggestions you have about anything I do. I'm always looking for ideas for my next random project.
                     </p>
                 </section>
             </div>

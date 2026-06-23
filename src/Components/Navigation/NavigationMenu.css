@@ -1,3 +1,31 @@
+.homeIcon{
+    position: fixed;
+    top: 20px;
+    /*right: 20px;*/
+    left: 20px;
+    z-index: 100;
+    /* Capsule */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 12px 12px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #00000080;
+    backdrop-filter: blur(8px);
+    transition-property: opacity, filter, background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    cursor: pointer;
+}
+
+.homeIcon:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
 .hamburger {
     position: fixed;
     top: 20px;
@@ -100,8 +128,8 @@
     position: fixed;
     inset: 0;
     z-index: 99;
-    backdrop-filter: blur(10px);
-    background-color: rgba(54, 55, 71, 0.92);
+    backdrop-filter: blur(25px);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;

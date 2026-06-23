@@ -8,6 +8,7 @@ export default function Contact() {
         <>
             <title>Contact | Thalia Myers</title>
             <ContactHeader />
+            <hr />
             <ContactDetails />
             <ContactForm />
         </>

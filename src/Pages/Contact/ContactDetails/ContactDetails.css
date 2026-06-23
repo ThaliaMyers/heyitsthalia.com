@@ -1,0 +1,15 @@
+.contactDetailsSection {
+    margin: var(--website-margins);
+}
+
+.emailLink {
+    display: flex;
+    color: var(--default-font-color);
+    font-family: var(--default-font), monospace;
+}
+
+.emailCaption {
+    display: flex;
+    color: var(--default-font-color);
+    font-family: var(--default-font), monospace;
+}
