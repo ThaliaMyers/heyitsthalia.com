@@ -52,8 +52,10 @@ export default function MyInterests() {
                         {items.map(item => (
                             <div key={item.index} className='interestCard'>
                                 <div className="interestCardContent">
+                                    {/*Interests Card Title*/}
                                     <h4>{item.title}</h4>
-                                    <p>{item.description}</p>
+
+                                    {/*Interests Card Tags*/}
                                     {item.tags?.length > 0 && (
                                         <div className='interestTags'>
                                             {item.tags.map(tag => (
@@ -61,6 +63,9 @@ export default function MyInterests() {
                                             ))}
                                         </div>
                                     )}
+
+                                    {/*Interests Card Description*/}
+                                    <p>{item.description}</p>
                                 </div>
                             </div>
                         ))}

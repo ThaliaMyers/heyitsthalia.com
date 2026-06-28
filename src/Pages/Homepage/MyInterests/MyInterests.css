@@ -1,6 +1,27 @@
 .interestCard {
     background: rgba(85, 86, 104, 0.5);
     border-radius: 30px;
+    position: relative;
+}
+
+.interestCard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 1px;
+    background: linear-gradient(
+            to bottom right,
+            rgba(255, 255, 255, 0.4),
+            transparent 40%,
+            transparent 60%,
+            rgba(255, 255, 255, 0.4)
+    );
+    -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
 }
 
 

@@ -12,7 +12,7 @@ export default function Homepage() {
             <meta name="description"
                   content="I am a developer/designer/source of chaos. Technology is the creative manifestation of the jumble of ideas I call my brain. Oh, and I'm also probably one of the biggest nerds you'll ever meet."/>
 
-            <Header/>
+            <Header id="scrollToTop" />
             <hr />
             <MyInterests/>
         </>
