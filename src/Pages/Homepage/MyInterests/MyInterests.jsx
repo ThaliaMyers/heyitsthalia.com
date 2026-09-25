@@ -52,7 +52,7 @@ export default function MyInterests() {
                 const orderedCategories = CATEGORY_ORDER.filter(cat => grouped[cat]);
                 const groupedInterests = orderedCategories.map(cat => ({
                     category: cat,
-                    items: grouped[cat]
+                    items: grouped[cat].sort((a, b) => a.index - b.index)
                 }));
 
                 setGroupedInterests(groupedInterests);
@@ -83,7 +83,7 @@ export default function MyInterests() {
                                         className='interestImage'
                                     />
                                 ) : (
-                                    <div style={{ backgroundColor: '#eee', height: '100px' }}>No Image</div>
+                                    <div style={{ background: 'linear-gradient(90deg, #426DC8 0%, #C0ADFD 100%), #D9D9D9', width: '100%', aspectRatio: '16/9', borderRadius: '30px' }}></div>
                                 )}
                                 <div className="interestCardContent">
                                     {/*Interests Card Title*/}
