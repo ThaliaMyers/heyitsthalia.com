@@ -2,6 +2,7 @@ import './Header/Header.css'
 import './Styles/TextStyles.css'
 import Header from '../Homepage/Header/Header'
 import MyInterests from "./MyInterests/MyInterests.jsx";
+import Footer from "../../Components/Footer/Footer.jsx";
 
 export default function Homepage() {
     return (
@@ -12,9 +13,11 @@ export default function Homepage() {
             <meta name="description"
                   content="I am a developer/designer/source of chaos. Technology is the creative manifestation of the jumble of ideas I call my brain. Oh, and I'm also probably one of the biggest nerds you'll ever meet."/>
 
-            <Header/>
+            <Header id="scrollToTop" />
             <hr />
             <MyInterests/>
+
+            <Footer/>
         </>
     )
 }
