@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../../firebase.js';
+import { db, storage } from '../../../firebase.js';
+import { ref, getDownloadURL } from "firebase/storage";
 import GradientTextHeader from "../../../Components/TextComponents/GradientTextHeader.jsx";
 import './MyInterests.css';
 
@@ -15,26 +16,49 @@ export default function MyInterests() {
 
     useEffect(() => {
         async function fetchInterests() {
-            const snapshot = await getDocs(collection(db, 'Interests Categories'));
-            const docs = snapshot.docs.map(doc => doc.data());
+            try {
+                const snapshot = await getDocs(collection(db, 'Interests Categories'))
+                const allDocs = snapshot.docs;
 
-            const grouped = {};
-            docs.forEach(item => {
-                if (!grouped[item.category]) grouped[item.category] = [];
-                grouped[item.category].push(item);
-            });
+                // Fetch the urls for all images from Firebase
+                const imageUrls = await Promise.all(
+                    allDocs.map(async (doc) => {
+                        try {
+                            const storagePath = `interests/${doc.id}.png`;
+                            const imageRef = ref(storage, storagePath);
+                            const url = await getDownloadURL(imageRef);
+                            console.log(url);
+                            return url;
+                        } catch {
+                            // Return null for missing images
+                            return null;
+                        }
+                    })
+                );
 
-            Object.values(grouped).forEach(items => items.sort((a, b) => a.index - b.index));
+                const mergedData = allDocs.map((doc, i) => ({
+                    ...doc.data(),
+                    id: doc.id,
+                    imageUrl: imageUrls[i]
+                }));
 
-            const orderedCategories = CATEGORY_ORDER.filter(cat => grouped[cat]);
-            const remainingCategories = Object.keys(grouped).filter(cat => !CATEGORY_ORDER.includes(cat));
+                const grouped = {};
+                mergedData.forEach(item => {
+                    const category = item.category;
+                    if (!grouped[category]) grouped[category] = [];
+                    grouped[category].push(item)
+                });
 
-            setGroupedInterests(
-                [...orderedCategories, ...remainingCategories].map(cat => ({
+                const orderedCategories = CATEGORY_ORDER.filter(cat => grouped[cat]);
+                const groupedInterests = orderedCategories.map(cat => ({
                     category: cat,
-                    items: grouped[cat],
-                }))
-            );
+                    items: grouped[cat]
+                }));
+
+                setGroupedInterests(groupedInterests);
+            } catch (e) {
+                console.error("Error loading data:", e);
+            }
         }
 
         fetchInterests();
@@ -51,9 +75,19 @@ export default function MyInterests() {
                     <div className='interestsGrid'>
                         {items.map(item => (
                             <div key={item.index} className='interestCard'>
+                                {item.imageUrl ? (
+                                    <img
+                                        src={item.imageUrl}
+                                        alt={`${item.title} image`}
+                                        style={{ width: '100%' }}
+                                        className='interestImage'
+                                    />
+                                ) : (
+                                    <div style={{ backgroundColor: '#eee', height: '100px' }}>No Image</div>
+                                )}
                                 <div className="interestCardContent">
                                     {/*Interests Card Title*/}
-                                    <h4>{item.title}</h4>
+                                    <h4 className="interestCardTitle">{item.title}</h4>
 
                                     {/*Interests Card Tags*/}
                                     {item.tags?.length > 0 && (
@@ -64,8 +98,10 @@ export default function MyInterests() {
                                         </div>
                                     )}
 
+                                    <br></br>
+
                                     {/*Interests Card Description*/}
-                                    <p>{item.description}</p>
+                                    <p className="interestCardDescription">{item.description}</p>
                                 </div>
                             </div>
                         ))}

@@ -4,6 +4,14 @@
     position: relative;
 }
 
+.interestCardTitle {
+    font-size: 1.5em;
+}
+
+.interestImage {
+    border-radius: 30px;
+}
+
 .interestCard::before {
     content: '';
     position: absolute;
@@ -26,7 +34,11 @@
 
 
 .interestCardContent {
-    padding: 10px;
+    padding: 20px;
+}
+
+.interestCardDescription {
+    /*font-size: ;*/
 }
 
 .interestTags {}
@@ -35,7 +47,7 @@
     color: var(--default-font-color);
     font-family: var(--default-font);
     font-weight: bold;
-    font-size: 10px;
+    font-size: 0.8em;
     padding: 8px;
     position: relative;
     background: rgba(85, 86, 104, 0.8);
@@ -77,6 +89,13 @@
 
 .interestsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
     gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+}
+
+/*Only increase number of columns up to 4. Past 4 columns, only increase width.*/
+@media (min-width: 1600px) {
+    .interestsGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
