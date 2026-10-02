@@ -33,6 +33,31 @@ section {
     container-type: inline-size;
 }
 
+/*
+  ______          __     _____ __        __
+ /_  __/__  _  __/ /_   / ___// /___  __/ /__  _____
+  / / / _ \| |/_/ __/   \__ \/ __/ / / / / _ \/ ___/
+ / / /  __/>  </ /_    ___/ / /_/ /_/ / /  __(__  )
+/_/  \___/_/|_|\__/   /____/\__/\__, /_/\___/____/
+                               /____/
+*/
+
+// Middle Header Text
+.middleText {
+    display: block;
+    font-family: --default-header-font, monospace;
+    font-weight: 500;
+    font-size: 6vw;
+    line-height: 0.8;
+}
+
+@media (min-width: 576px) {
+    .middleText {
+        font-size: 4vw;
+    }
+}
+
+// Big Header Text
 .bigText {
     display: inline-block;
     width: fit-content;
@@ -48,4 +73,32 @@ section {
     padding-top: 0.15em;
     padding-bottom: 0.15em;
     margin: 0;
+}
+
+@media (min-width: 576px) {
+    .bigText {
+        width: fit-content;
+        font-size: 15cqi;
+    }
+}
+
+// Small Header Text
+.smallText {
+    display: block;
+    font-family: --default-font, monospace;
+    font-weight: 600;
+    font-size: 120%;
+    width: 90%;
+}
+
+@media (min-width: 576px) {
+    .smallText {
+        width: 50%;
+    }
+}
+
+// All Header Text Styles
+.bigText, .middleText, .smallText {
+    position: relative;
+    z-index: 1;
 }
