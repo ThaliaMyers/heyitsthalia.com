@@ -1,4 +1,4 @@
-import '../../Homepage/Header/Header.css'
+
 import './ContactHeader.css'
 
 export default function ContactHeader() {

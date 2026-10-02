@@ -1,5 +1,4 @@
 import './AboutMeHeader.css'
-import '../../Homepage/Header/Header.css'
 
 export default function AboutMeHeader() {
     return (
