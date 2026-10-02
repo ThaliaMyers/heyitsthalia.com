@@ -1,7 +1,7 @@
 import './Header/Header.css'
-import './Styles/TextStyles.css'
+import '../../DefaultStyles/TextStyles.css'
 import Header from '../Homepage/Header/Header'
-import MyInterests from "./MyInterests/MyInterests.jsx";
+import Interests from "./Interests/Interests.jsx";
 import Footer from "../../Components/Footer/Footer.jsx";
 
 export default function Homepage() {
@@ -15,7 +15,7 @@ export default function Homepage() {
 
             <Header id="scrollToTop" />
             <hr />
-            <MyInterests/>
+            <Interests/>
 
             <Footer/>
         </>

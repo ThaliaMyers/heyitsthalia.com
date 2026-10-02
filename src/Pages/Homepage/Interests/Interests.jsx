@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db, storage } from '../../../firebase.js';
 import { ref, getDownloadURL } from "firebase/storage";
-import GradientTextHeader from "../../../Components/TextComponents/GradientTextHeader.jsx";
-import './MyInterests.css';
+import GradientTextHeader from "../../../Components/UIComponents/TextComponents/GradientTextHeader/GradientTextHeader.jsx";
+import './Interests.css';
 import {NavLink} from "react-router";
 
 const CATEGORY_ORDER = [
@@ -12,7 +12,7 @@ const CATEGORY_ORDER = [
     "Other Technology"
 ];
 
-export default function MyInterests() {
+export default function Interests() {
     const [groupedInterests, setGroupedInterests] = useState([]);
 
     useEffect(() => {

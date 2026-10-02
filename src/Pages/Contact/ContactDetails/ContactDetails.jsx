@@ -1,5 +1,5 @@
 import './ContactDetails.css'
-import GradientTextHeader from "../../../Components/TextComponents/GradientTextHeader.jsx";
+import GradientTextHeader from "../../../Components/UIComponents/TextComponents/GradientTextHeader/GradientTextHeader.jsx";
 
 export default function ContactDetails() {
     return (
