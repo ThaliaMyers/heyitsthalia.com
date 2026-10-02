@@ -4,6 +4,7 @@ import { db, storage } from '../../../firebase.js';
 import { ref, getDownloadURL } from "firebase/storage";
 import GradientTextHeader from "../../../Components/TextComponents/GradientTextHeader.jsx";
 import './MyInterests.css';
+import {NavLink} from "react-router";
 
 const CATEGORY_ORDER = [
     "Design and Development",
@@ -74,36 +75,38 @@ export default function MyInterests() {
                     <h3 className='interestsSubheaderText'>{category}</h3>
                     <div className='interestsGrid'>
                         {items.map(item => (
-                            <div key={item.index} className='interestCard'>
-                                {item.imageUrl ? (
-                                    <img
-                                        src={item.imageUrl}
-                                        alt={`${item.title} image`}
-                                        style={{ width: '100%' }}
-                                        className='interestImage'
-                                    />
-                                ) : (
-                                    <div style={{ background: 'linear-gradient(90deg, #426DC8 0%, #C0ADFD 100%), #D9D9D9', width: '100%', aspectRatio: '16/9', borderRadius: '30px' }}></div>
-                                )}
-                                <div className="interestCardContent">
-                                    {/*Interests Card Title*/}
-                                    <h4 className="interestCardTitle">{item.title}</h4>
-
-                                    {/*Interests Card Tags*/}
-                                    {item.tags?.length > 0 && (
-                                        <div className='interestTags'>
-                                            {item.tags.map(tag => (
-                                                <span key={tag} className='interestTag'>{tag}</span>
-                                            ))}
-                                        </div>
+                            <NavLink to="/contact" style={{ textDecoration: 'none' }}>
+                                <div key={item.index} className='interestCard'>
+                                    {item.imageUrl ? (
+                                        <img
+                                            src={item.imageUrl}
+                                            alt={`${item.title} image`}
+                                            style={{ width: '100%' }}
+                                            className='interestImage'
+                                        />
+                                    ) : (
+                                        <div style={{ background: 'linear-gradient(90deg, #426DC8 0%, #C0ADFD 100%), #D9D9D9', width: '100%', aspectRatio: '16/9', borderRadius: '30px' }}></div>
                                     )}
+                                    <div className="interestCardContent">
+                                        {/*Interests Card Title*/}
+                                        <h4 className="interestCardTitle">{item.title}</h4>
 
-                                    <br></br>
+                                        {/*Interests Card Tags*/}
+                                        {item.tags?.length > 0 && (
+                                            <div className='interestTags'>
+                                                {item.tags.map(tag => (
+                                                    <span key={tag} className='interestTag'>{tag}</span>
+                                                ))}
+                                            </div>
+                                        )}
 
-                                    {/*Interests Card Description*/}
-                                    <p className="interestCardDescription">{item.description}</p>
+                                        <br></br>
+
+                                        {/*Interests Card Description*/}
+                                        <p className="interestCardDescription">{item.description}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </NavLink>
                         ))}
                     </div>
                 </section>
