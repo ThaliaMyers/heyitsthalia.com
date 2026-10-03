@@ -1,8 +1,8 @@
 .interestCard {
     background-color: rgba(85, 86, 104, 0.5);
     border-radius: 30px;
-    position: relative;
     color: white;
+    position: relative;
     transition: scale 200ms ease-in-out, background-color 200ms ease-in-out;
 }
 
@@ -21,11 +21,6 @@
 }
 
 .interestCard::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 30px;
-    padding: 1px;
     background: linear-gradient(
             to bottom right,
             rgba(255, 255, 255, 0.4),
@@ -33,11 +28,15 @@
             transparent 60%,
             rgba(255, 255, 255, 0.4)
     );
-    -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
+    border-radius: 30px;
+    content: '';
+    inset: 0;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
+    padding: 1px;
+    position: absolute;
 }
 
 
@@ -46,29 +45,24 @@
 }
 
 .interestCardDescription {
-    /*font-size: ;*/
 }
 
-.interestTags {}
+.interestTags {
+}
 
 .interestTag {
-    color: var(--default-font-color);
-    font-family: var(--default-font);
-    font-weight: bold;
-    font-size: 0.8em;
-    padding: 8px;
-    position: relative;
     background: rgba(85, 86, 104, 0.8);
     border-radius: 30px;
+    color: var(--default-font-color);
+    font-family: var(--default-font);
+    font-size: 0.8em;
+    font-weight: bold;
     margin-left: 5px;
+    padding: 8px;
+    position: relative;
 }
 
 .interestTag::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 30px;
-    padding: 1px;
     background: linear-gradient(
             to bottom right,
             rgba(255, 255, 255, 0.4),
@@ -76,11 +70,15 @@
             transparent 60%,
             rgba(255, 255, 255, 0.4)
     );
-    -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
+    border-radius: 30px;
+    content: '';
+    inset: 0;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
+    padding: 1px;
+    position: absolute;
 }
 
 .myInterests {
@@ -88,11 +86,12 @@
     margin-right: var(--website-margins);
 }
 
-.myInterestsHeader {}
+.myInterestsHeader {
+}
 
 .interestsSubheaderText {
-    font-family: var(--default-font);
     color: var(--default-font-color);
+    font-family: var(--default-font);
 }
 
 .interestsGrid {
