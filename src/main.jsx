@@ -6,7 +6,7 @@ import {BrowserRouter, Navigate, Route, Routes} from "react-router";
 import CustomCursor from "./Components/UIComponents/CustomCursor/CustomCursor.jsx";
 import Homepage from "./Pages/Homepage/Homepage.tsx";
 import Contact from "./Pages/Contact/Contact.tsx";
-import NavigationMenu from "./Components/Navigation/NavigationMenu.jsx";
+import NavigationMenu from "./Components/UIComponents/Navigation/NavigationMenu.jsx";
 import AboutMe from "./Pages/About/AboutMe.tsx";
 import ScrollToTop from "./Components/Helpers/ScrollManagement/ScrollToTop/ScrollToTop.tsx";
 

@@ -7,12 +7,12 @@ import homeIcon from './home-icon-image.svg';
 export default function NavigationMenu() {
     const [menuExpanded, setMenu] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
-
+    
     const openMenu = () => {
         setIsClosing(false);
         setMenu(true);
     };
-
+    
     const closeMenu = () => {
         setIsClosing(true);
         setTimeout(() => {
@@ -20,7 +20,7 @@ export default function NavigationMenu() {
             setIsClosing(false);
         }, 550);
     };
-
+    
     const toggleMenu = () => {
         if (menuExpanded && !isClosing) {
             closeMenu();
@@ -28,7 +28,7 @@ export default function NavigationMenu() {
             openMenu();
         }
     };
-
+    
     // Handle menu open/close shortcut
     useEffect(() => {
         const handleKeyDown = (e) => {
@@ -43,17 +43,17 @@ export default function NavigationMenu() {
                 closeMenu();
             }
         };
-
+        
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [menuExpanded, isClosing]);
-
+    
     const overlayClass = [
         'nav-overlay',
         menuExpanded && !isClosing ? 'nav-overlay--open' : '',
         isClosing ? 'nav-overlay--closing' : '',
     ].filter(Boolean).join(' ');
-
+    
     return (
         <>
             <nav>
@@ -75,7 +75,7 @@ export default function NavigationMenu() {
                         </span>
                     </span>
                 </button>
-
+                
                 <div className={overlayClass} onClick={closeMenu}>
                     <nav className="nav-menu" onClick={(e) => e.stopPropagation()}>
                         <ul>
