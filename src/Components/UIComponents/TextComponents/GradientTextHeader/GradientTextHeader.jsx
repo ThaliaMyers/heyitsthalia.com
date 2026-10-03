@@ -1,4 +1,4 @@
-import './GradientTextHeader.css'
+import './GradientTextHeader.scss'
 
 export default function GradientTextHeader({ text, textSize, tagType, margin}) {
     const TagName = tagType

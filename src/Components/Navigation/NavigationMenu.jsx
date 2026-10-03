@@ -1,5 +1,5 @@
 import './hamburgers.css'
-import './NavigationMenu.css'
+import './NavigationMenu.scss'
 import {useEffect, useState} from "react";
 import { NavLink} from "react-router";
 import homeIcon from './home-icon-image.svg';

@@ -1,6 +1,6 @@
 import "./Footer.css"
-import "../../DefaultStyles/TextStyles.module.css"
-import GradientTextHeader from "../UIComponents/TextComponents/GradientTextHeader/GradientTextHeader.jsx";
+import "../../../DefaultStyles/TextStyles.module.css"
+import GradientTextHeader from "../TextComponents/GradientTextHeader/GradientTextHeader.jsx";
 
 export default function Footer() {
     return (

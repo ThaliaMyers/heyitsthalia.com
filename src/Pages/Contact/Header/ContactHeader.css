@@ -1,9 +1,0 @@
-.bigName--contactHeader {
-    font-size: 15cqi;
-}
-
-@media (min-width: 576px) {
-    .bigName--contactHeader {
-        font-size: 12cqi;
-    }
-}
