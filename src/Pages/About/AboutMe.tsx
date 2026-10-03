@@ -1,3 +1,4 @@
+import styles from "./AboutMe.module.scss";
 import GenericHeader from "../../Components/GenericSections/GenericHeader/GenericHeader.tsx";
 
 export default function AboutMe() {

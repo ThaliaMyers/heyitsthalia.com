@@ -1,4 +1,4 @@
-import '../../DefaultStyles/TextStyles.module.css'
+import '../../DefaultStyles/TextStyles.module.scss'
 import Interests from "./Interests/Interests.jsx";
 import Footer from "../../Components/UIComponents/Footer/Footer.jsx";
 import GenericHeader from "../../Components/GenericSections/GenericHeader/GenericHeader.tsx";

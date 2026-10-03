@@ -1,8 +1,14 @@
 .interestCard {
-    background: rgba(85, 86, 104, 0.5);
+    background-color: rgba(85, 86, 104, 0.5);
     border-radius: 30px;
     position: relative;
     color: white;
+    transition: scale 200ms ease-in-out, background-color 200ms ease-in-out;
+}
+
+.interestCard:hover {
+    background-color: rgb(117 118 142 / 0.7);
+    scale: 101%;
 }
 
 .interestCardTitle {
