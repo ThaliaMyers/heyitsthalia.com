@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import './variables.css'
 import {BrowserRouter, Navigate, Route, Routes} from "react-router";
-import CustomCursor from "./Components/UIComponents/CustomCursor/CustomCursor.jsx";
+import CustomCursor from "./Components/UIComponents/CustomCursor/CustomCursor.tsx";
 import Homepage from "./Pages/Homepage/Homepage.tsx";
 import Contact from "./Pages/Contact/Contact.tsx";
 import NavigationMenu from "./Components/UIComponents/Navigation/NavigationMenu.jsx";

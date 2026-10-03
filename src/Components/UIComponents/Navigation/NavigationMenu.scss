@@ -117,7 +117,7 @@ $backgroundBlur: 20px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    font-family: var(--default-font);
+    font-family: var(--default-font), monospace;
     font-size: 1rem;
     color: #fff;
     letter-spacing: 0.08em;
@@ -212,7 +212,7 @@ $backgroundBlur: 20px;
 
 // Links
 .nav-menu a {
-    font-family: var(--default-font);
+    font-family: var(--default-font), monospace;
     font-size: 3rem;
     font-weight: bold;
     text-decoration: none;

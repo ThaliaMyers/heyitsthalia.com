@@ -1,6 +1,6 @@
-import './Styles/Contact.module.css'
-import ContactDetails from "./ContactDetails/ContactDetails.jsx";
-import ContactForm from "./ContactForm/ContactForm.jsx";
+import './Contact.module.css'
+import ContactDetails from "./ContactDetails/ContactDetails.js";
+import ContactForm from "./ContactForm/ContactForm.js";
 import GenericHeader from "../../Components/GenericSections/GenericHeader/GenericHeader.tsx";
 
 export default function Contact() {
