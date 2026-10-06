@@ -37,6 +37,18 @@
     mask-composite: exclude;
     padding: 1px;
     position: absolute;
+    transition: all 200ms ease-in-out;
+}
+
+.interestCard:hover::before {
+    background: linear-gradient(
+            to bottom right,
+            rgba(255, 255, 255, 0.6),
+            transparent 40%,
+            transparent 60%,
+            rgba(255, 255, 255, 0.6)
+    );
+    padding: 1.5px;
 }
 
 

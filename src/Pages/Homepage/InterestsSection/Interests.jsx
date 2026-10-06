@@ -18,7 +18,7 @@ export default function Interests() {
     useEffect(() => {
         async function fetchInterests() {
             try {
-                const snapshot = await getDocs(collection(db, 'Interests Categories'))
+                const snapshot = await getDocs(collection(db, 'InterestsSection Categories'))
                 const allDocs = snapshot.docs;
 
                 // Fetch the urls for all images from Firebase
@@ -88,10 +88,10 @@ export default function Interests() {
                                         <div style={{ background: 'linear-gradient(90deg, #426DC8 0%, #C0ADFD 100%), #D9D9D9', width: '100%', aspectRatio: '16/9', borderRadius: '30px' }}></div>
                                     )}
                                     <div className="interestCardContent">
-                                        {/*Interests Card Title*/}
+                                        {/*InterestsSection Card Title*/}
                                         <h4 className="interestCardTitle">{item.title}</h4>
 
-                                        {/*Interests Card Tags*/}
+                                        {/*InterestsSection Card Tags*/}
                                         {item.tags?.length > 0 && (
                                             <div className='interestTags'>
                                                 {item.tags.map(tag => (
@@ -102,7 +102,7 @@ export default function Interests() {
 
                                         <br></br>
 
-                                        {/*Interests Card Description*/}
+                                        {/*InterestsSection Card Description*/}
                                         <p className="interestCardDescription">{item.description}</p>
                                     </div>
                                 </div>
