@@ -1,12 +1,16 @@
 import './hamburgers.css'
 import './NavigationMenu.scss'
-import {useEffect, useState} from "react";
+import {useEffect } from "react";
 import { NavLink} from "react-router";
 import homeIcon from './home-icon-image.svg';
+import {useMenuIsClosing} from "./ContextProviders/MenuIsClosingContext.tsx";
+import {useMenuExpanded} from "./ContextProviders/MenuExpandedProvider.tsx";
+
+
 
 export default function NavigationMenu() {
-    const [menuExpanded, setMenu] = useState(false);
-    const [isClosing, setIsClosing] = useState(false);
+    const [menuExpanded, setMenu] = useMenuExpanded();
+    const [isClosing, setIsClosing] = useMenuIsClosing();
     
     const openMenu = () => {
         setIsClosing(false);
@@ -80,16 +84,16 @@ export default function NavigationMenu() {
                     <nav className="nav-menu" onClick={(e) => e.stopPropagation()}>
                         <ul>
                             <li>
-                                <NavLink to="/" onClick={closeMenu}>Home</NavLink>
+                                <NavLink to="/" onClick={closeMenu} viewTransition>Home</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/projects" onClick={closeMenu}>Projects</NavLink>
+                                <NavLink to="/projects" onClick={closeMenu} viewTransition>Projects</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/aboutme" onClick={closeMenu}>About Me</NavLink>
+                                <NavLink to="/aboutme" onClick={closeMenu} viewTransition>About Me</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
+                                <NavLink to="/contact" onClick={closeMenu} viewTransition>Contact</NavLink>
                             </li>
                         </ul>
                     </nav>

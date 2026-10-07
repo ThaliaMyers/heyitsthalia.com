@@ -4,6 +4,7 @@
     color: white;
     position: relative;
     transition: scale 200ms ease-in-out, background-color 200ms ease-in-out;
+    grid-auto-rows: 1fr;
 }
 
 .interestCard:hover {
@@ -110,6 +111,7 @@
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+    grid-auto-rows: 1fr;
 }
 
 /*Only increase number of columns up to 4. Past 4 columns, only increase width.*/

@@ -1,0 +1,36 @@
+.blueprintGrid {
+    position: absolute;
+    inset: 0;
+    background-color: transparent;
+    background-image:
+            linear-gradient(to right, #C0ADFD80 2px, transparent 2px),
+            linear-gradient(to bottom, #C0ADFD80 2px, transparent 2px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at 80% 50%, black 0%, transparent 40%);
+    -webkit-mask-image: radial-gradient(circle at 80% 50%, black 0%, transparent 40%);
+}
+
+$maskCursorSize: 500px;
+
+// TODO: Make this not look like complete shit
+.cursor {
+    position: fixed;
+    //left: - $maskCursorSize / 2 + 8;
+    //top: - $maskCursorSize / 2 + 8;
+    width: $maskCursorSize;
+    height: $maskCursorSize;
+    border-radius: calc($maskCursorSize / 2);
+    z-index: 1000;
+    pointer-events: none;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    mix-blend-mode: soft-light;
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 50%);
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 50%);
+}
+
+@media (pointer: fine) {
+    .cursor {
+        display: block;
+    }
+}

@@ -8,4 +8,5 @@
     background-size: 60px 60px;
     mask-image: radial-gradient(circle at 80% 50%, black 0%, transparent 40%);
     -webkit-mask-image: radial-gradient(circle at 80% 50%, black 0%, transparent 40%);
+    transition: all 500ms ease-in-out;
 }

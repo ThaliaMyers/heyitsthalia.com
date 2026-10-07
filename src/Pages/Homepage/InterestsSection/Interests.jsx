@@ -18,10 +18,10 @@ export default function Interests() {
     useEffect(() => {
         async function fetchInterests() {
             try {
-                const snapshot = await getDocs(collection(db, 'InterestsSection Categories'))
+                const snapshot = await getDocs(collection(db, 'Interests Categories'))
                 const allDocs = snapshot.docs;
-
-                // Fetch the urls for all images from Firebase
+                
+                // Fetch the URLs for all images from Firebase
                 const imageUrls = await Promise.all(
                     allDocs.map(async (doc) => {
                         try {
@@ -31,7 +31,7 @@ export default function Interests() {
                             console.log(url);
                             return url;
                         } catch {
-                            // Return null for missing images
+                            console.error("Failed to fetch image");
                             return null;
                         }
                     })
@@ -75,8 +75,8 @@ export default function Interests() {
                     <h3 className='interestsSubheaderText'>{category}</h3>
                     <div className='interestsGrid'>
                         {items.map(item => (
-                            <NavLink to="/contact" style={{ textDecoration: 'none' }}>
-                                <div key={item.index} className='interestCard'>
+                            <NavLink className='interestCard' to="/contact" style={{ textDecoration: 'none' }}>
+                                <div key={item.index} >
                                     {item.imageUrl ? (
                                         <img
                                             src={item.imageUrl}
