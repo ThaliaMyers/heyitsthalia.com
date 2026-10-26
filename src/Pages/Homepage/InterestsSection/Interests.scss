@@ -1,0 +1,122 @@
+.interestCard {
+    background-color: rgba(85, 86, 104, 0.5);
+    border-radius: 30px;
+    color: white;
+    position: relative;
+    transition: scale 200ms ease-in-out, background-color 200ms ease-in-out;
+    grid-auto-rows: 1fr;
+}
+
+.interestCard:hover {
+    background-color: rgb(117 118 142 / 0.7);
+    scale: 101%;
+}
+
+.interestCardTitle {
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.interestImage {
+    border-radius: 30px;
+}
+
+.interestCard::before {
+    background: linear-gradient(
+            to bottom right,
+            rgba(255, 255, 255, 0.4),
+            transparent 40%,
+            transparent 60%,
+            rgba(255, 255, 255, 0.4)
+    );
+    border-radius: 30px;
+    content: '';
+    inset: 0;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    padding: 1px;
+    position: absolute;
+    transition: all 200ms ease-in-out;
+}
+
+.interestCard:hover::before {
+    background: linear-gradient(
+            to bottom right,
+            rgba(255, 255, 255, 0.6),
+            transparent 40%,
+            transparent 60%,
+            rgba(255, 255, 255, 0.6)
+    );
+    padding: 1.5px;
+}
+
+
+.interestCardContent {
+    padding: 20px;
+}
+
+.interestCardDescription {
+}
+
+.interestTags {
+}
+
+.interestTag {
+    background: rgba(85, 86, 104, 0.8);
+    border-radius: 30px;
+    color: var(--default-font-color);
+    font-family: var(--default-font);
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 8px;
+    position: relative;
+}
+
+.interestTag::before {
+    background: linear-gradient(
+            to bottom right,
+            rgba(255, 255, 255, 0.4),
+            transparent 40%,
+            transparent 60%,
+            rgba(255, 255, 255, 0.4)
+    );
+    border-radius: 30px;
+    content: '';
+    inset: 0;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    padding: 1px;
+    position: absolute;
+}
+
+.myInterests {
+    margin-left: var(--website-margins);
+    margin-right: var(--website-margins);
+}
+
+.myInterestsHeader {
+}
+
+.interestsSubheaderText {
+    color: var(--default-font-color);
+    font-family: var(--default-font);
+}
+
+.interestsGrid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+    grid-auto-rows: 1fr;
+}
+
+/*Only increase number of columns up to 4. Past 4 columns, only increase width.*/
+@media (min-width: 1600px) {
+    .interestsGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

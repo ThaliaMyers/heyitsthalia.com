@@ -1,8 +1,7 @@
-import './Styles/Contact.module.css'
-import ContactHeader from "./Header/ContactHeader.jsx";
-import ContactDetails from "./ContactDetails/ContactDetails.jsx";
-import ContactForm from "./ContactForm/ContactForm.jsx";
-import GenericHeader from "../../Components/GenericHeader/GenericHeader.tsx";
+import styles from './Contact.module.scss'
+import GenericHeader from "../../Components/GenericSections/GenericHeader/GenericHeader.tsx";
+import ContactDetails from "./ContactDetails/ContactDetails.tsx";
+import ContactForm from "./ContactForm/ContactForm.tsx";
 
 export default function Contact() {
     return (
@@ -17,8 +16,8 @@ export default function Contact() {
             }></GenericHeader>
 
             <hr />
-            <ContactDetails />
-            <ContactForm />
+            <ContactDetails></ContactDetails>
+            <ContactForm></ContactForm>
         </>
     )
 }
