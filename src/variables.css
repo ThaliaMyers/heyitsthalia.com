@@ -13,7 +13,7 @@
 
     /* Website Colours */
     --siteBackground: #363747;
-    --text-gradient-start: #426DC8;
+    --text-gradient-start: #77A3F9;
     --text-gradient-end: #C0ADFD;
     --text-gradient: linear-gradient(to right, var(--text-gradient-start), var(--text-gradient-end));
     --default-font-color: #FFFFFF;
