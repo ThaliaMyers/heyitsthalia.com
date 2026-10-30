@@ -85,7 +85,7 @@ export default function Interests() {
                                             className='interestImage'
                                         />
                                     ) : (
-                                        <div style={{ background: 'linear-gradient(90deg, #426DC8 0%, #C0ADFD 100%), #D9D9D9', width: '100%', aspectRatio: '16/9', borderRadius: '30px' }}></div>
+                                        <div style={{ background: 'linear-gradient(90deg, #77A3F9 0%, #C0ADFD 100%), #D9D9D9', width: '100%', aspectRatio: '16/9', borderRadius: '30px' }}></div>
                                     )}
                                     <div className="interestCardContent">
                                         {/*InterestsSection Card Title*/}

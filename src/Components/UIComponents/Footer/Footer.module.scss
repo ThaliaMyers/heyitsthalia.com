@@ -1,0 +1,35 @@
+li {
+    text-align: right;
+}
+
+// Container for the whole footer component
+.footer {
+    margin-top: 50px;
+}
+
+.footerTitleText {
+    margin: 50px;
+}
+
+// Container for footer navigation list
+.footerList {
+    align-items: end;
+    list-style: none;
+}
+
+// Item in footer navigation list
+.footerListItem {
+    font-family: --default-header-font, monospace;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    background: white;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    transition: all 0.2s ease;
+}
+
+.footerListItem:hover {
+    background: var(--text-gradient);
+}

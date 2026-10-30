@@ -1,7 +1,7 @@
 import '../../DefaultStyles/TextStyles.module.scss'
 import styles from './Homepage.module.scss'
 import Interests from "./InterestsSection/Interests.jsx";
-import Footer from "../../Components/UIComponents/Footer/Footer.jsx";
+import Footer from "../../Components/UIComponents/Footer/Footer.js";
 import GenericHeader from "../../Components/GenericSections/GenericHeader/GenericHeader.tsx";
 import {calculateAge} from "../../Components/Helpers/CalculateAge.tsx";
 import {getArticle} from "../../Components/Helpers/GetNumArticle.tsx";

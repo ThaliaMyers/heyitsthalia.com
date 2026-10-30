@@ -5,7 +5,10 @@ import { NavLink} from "react-router";
 import homeIcon from './home-icon-image.svg';
 import {useMenuIsClosing} from "./ContextProviders/MenuIsClosingContext.tsx";
 import {useMenuExpanded} from "./ContextProviders/MenuExpandedProvider.tsx";
-
+import githubIcon from "../../.././assets/Images/Icons/Socials/github_icon.svg";
+import instagramIcon from "../../.././assets/Images/Icons/Socials/instagram_icon.svg";
+import githubIconGradient from "../../.././assets/Images/Icons/Socials/github_icon_gradient.svg";
+import instagramIconGradient from "../../.././assets/Images/Icons/Socials/instagram_icon_gradient.svg";
 
 
 export default function NavigationMenu() {
@@ -94,6 +97,24 @@ export default function NavigationMenu() {
                             </li>
                             <li>
                                 <NavLink to="/contact" onClick={closeMenu} viewTransition>Contact</NavLink>
+                            </li>
+                            <li className={"socialsRow"}>
+                                <div className={"socialsContainer"}>
+                                    <a href={"https://github.com/ThaliaMyers"} className={"socialsIconLink"}>
+                                        <img src={githubIcon} className={"socialsIcon"}/>
+                                    </a>
+                                    <a href={"https://github.com/ThaliaMyers"} className={"socialsIconLink"}>
+                                        <img src={githubIconGradient} className={"overlaySocialsIcon"}/>
+                                    </a>
+                                </div>
+                                <div className={"socialsContainer"}>
+                                    <a href={"https://www.instagram.com/heyitsthaliamyers"} className={"socialsIconLink"}>
+                                        <img src={instagramIcon} className={"socialsIcon"}/>
+                                    </a>
+                                    <a href={"https://www.instagram.com/heyitsthaliamyers"} className={"socialsIconLink"}>
+                                        <img src={instagramIconGradient} className={"overlaySocialsIcon"}/>
+                                    </a>
+                                </div>
                             </li>
                         </ul>
                     </nav>
