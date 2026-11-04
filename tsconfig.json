@@ -16,8 +16,8 @@
     "types": [],
     // For nodejs:
     // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
+    // "DataTypes": ["node"],
+    // and npm install -D @DataTypes/node
     "allowJs": true,
     "esModuleInterop": true,
     "allowImportingTsExtensions": true,

@@ -9,6 +9,8 @@ import AboutMe from "./About/AboutMe.tsx";
 import {createContext, useContext, useState} from "react";
 import {MenuIsClosingProvider} from "../Components/UIComponents/Navigation/ContextProviders/MenuIsClosingContext.tsx";
 import {MenuExpandedProvider} from "../Components/UIComponents/Navigation/ContextProviders/MenuExpandedProvider.tsx";
+import PhotographyPage from "@/Pages/Projects/Photography/Photography.tsx";
+import ProjectsPage from "@/Pages/Projects/Projects.tsx";
 
 export default function CoreLayout() {
     return (
@@ -23,6 +25,10 @@ export default function CoreLayout() {
                             <Route path="/home" element={<Navigate to="/" replace />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/aboutme" element={<AboutMe />} />
+                            
+                            {/*Projects Pages*/}
+                            <Route path="/projects" element={<ProjectsPage />}/>
+                            <Route path="/projects/photography" element={<PhotographyPage />}/>
                         </Routes>
                     </BrowserRouter>
                     <CustomCursor />

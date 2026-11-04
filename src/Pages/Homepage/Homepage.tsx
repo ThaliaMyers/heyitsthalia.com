@@ -1,15 +1,18 @@
 import '../../DefaultStyles/TextStyles.module.scss'
 import styles from './Homepage.module.scss'
 import Interests from "./InterestsSection/Interests.jsx";
-import Footer from "../../Components/UIComponents/Footer/Footer.js";
 import GenericHeader from "../../Components/GenericSections/GenericHeader/GenericHeader.tsx";
 import {calculateAge} from "../../Components/Helpers/CalculateAge.tsx";
 import {getArticle} from "../../Components/Helpers/GetNumArticle.tsx";
+import Footer from "@/Components/UIComponents/Footer/Footer.tsx";
+import {getWebsitePhotoAlbums} from "@/Firebase/PhotoAlbum/PhotoAlbumService.tsx";
+import {useEffect, useState} from "react";
+import type {PhotoAlbum} from "@/Firebase/PhotoAlbum/PhotoAlbum.ts";
 
 export default function Homepage() {
     const birthday = new Date(2008, 2, 18);
     let age = calculateAge(birthday);
-    let article = getArticle(age)
+    let article = getArticle(age);
     
     return (
         <>
