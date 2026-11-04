@@ -5,10 +5,10 @@ import { NavLink} from "react-router";
 import homeIcon from './home-icon-image.svg';
 import {useMenuIsClosing} from "./ContextProviders/MenuIsClosingContext.tsx";
 import {useMenuExpanded} from "./ContextProviders/MenuExpandedProvider.tsx";
-import githubIcon from "../../.././assets/Images/Icons/Socials/github_icon.svg";
-import instagramIcon from "../../.././assets/Images/Icons/Socials/instagram_icon.svg";
-import githubIconGradient from "../../.././assets/Images/Icons/Socials/github_icon_gradient.svg";
-import instagramIconGradient from "../../.././assets/Images/Icons/Socials/instagram_icon_gradient.svg";
+import githubIcon from "@/Assets/Images/Icons/Socials/github_icon.svg";
+import instagramIcon from "@/Assets/Images/Icons/Socials/instagram_icon.svg";
+import githubIconGradient from "@/Assets/Images/Icons/Socials/github_icon_gradient.svg";
+import instagramIconGradient from "@/Assets/Images/Icons/Socials/instagram_icon_gradient.svg";
 
 
 export default function NavigationMenu() {

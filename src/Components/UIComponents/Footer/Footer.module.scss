@@ -18,18 +18,15 @@ li {
 }
 
 // Item in footer navigation list
-.footerListItem {
+.footerListItem a {
     font-family: --default-header-font, monospace;
     font-size: 3rem;
     font-weight: bold;
     text-decoration: none;
-    background: white;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-clip: text;
-    transition: all 0.2s ease;
+    color: white;
+    transition: opacity 200ms ease;
 }
 
-.footerListItem:hover {
-    background: var(--text-gradient);
+.footerListItem a:hover {
+    opacity: 0.6;
 }
