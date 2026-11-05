@@ -5,6 +5,7 @@ import { ref, getDownloadURL } from "firebase/storage";
 import GradientTextHeader from "../../../Components/UIComponents/TextComponents/GradientTextHeader/GradientTextHeader.tsx";
 import './Interests.scss';
 import {NavLink} from "react-router";
+import {isDevelopment} from "@/Components/Helpers/IsDevelopment.tsx";
 
 const CATEGORY_ORDER = [
     "Design and Development",
@@ -28,15 +29,20 @@ export default function Interests() {
                             const storagePath = `interests/${doc.id}.png`;
                             const imageRef = ref(storage, storagePath);
                             const url = await getDownloadURL(imageRef);
-                            console.log(url);
+                            
+                            if (isDevelopment()) {
+                                console.log(url);
+                            }
                             return url;
                         } catch {
-                            console.error("Failed to fetch image");
+                            if (isDevelopment()) {
+                                console.error("Failed to fetch image");
+                            }
                             return null;
                         }
                     })
                 );
-
+                
                 const mergedData = allDocs.map((doc, i) => ({
                     ...doc.data(),
                     id: doc.id,
@@ -58,7 +64,9 @@ export default function Interests() {
 
                 setGroupedInterests(groupedInterests);
             } catch (e) {
-                console.error("Error loading data:", e);
+                if (isDevelopment()) {
+                    console.error("Error loading data:", e);
+                }
             }
         }
 
