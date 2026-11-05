@@ -6,8 +6,8 @@ import GradientTextHeader from "../../../Components/UIComponents/TextComponents/
 import './Photography.module.scss';
 import {NavLink} from "react-router";
 import GenericHeader from "@/Components/GenericSections/GenericHeader/GenericHeader.tsx";
-import {getWebsitePhotoAlbums} from "@/Firebase/PhotoAlbum/PhotoAlbumService.tsx";
-import type {PhotoAlbum} from "@/Firebase/PhotoAlbum/PhotoAlbum.ts";
+import {getWebsitePhotoAlbums} from "@/Firebase/Database/PhotoAlbum/PhotoAlbumService.tsx";
+import type {PhotoAlbum} from "@/Firebase/Database/PhotoAlbum/PhotoAlbum.ts";
 import {isDevelopment} from "@/Components/Helpers/IsDevelopment.tsx";
 
 export default function PhotographyPage() {
@@ -16,7 +16,9 @@ export default function PhotographyPage() {
     
     useEffect(() => {
         loadPhotoAlbums();
-        console.log(photoAlbums);
+        if (isDevelopment()) {
+            console.log(photoAlbums);
+        }
     }, []);
     
     const loadPhotoAlbums = async () => {

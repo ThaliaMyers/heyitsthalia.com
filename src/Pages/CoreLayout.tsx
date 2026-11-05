@@ -21,6 +21,7 @@ export default function CoreLayout() {
                         <ScrollToTop />
                         <NavigationMenu />
                         <Routes>
+                            {/*Core Navigation Pages*/}
                             <Route path="/" element={<Homepage />} />
                             <Route path="/home" element={<Navigate to="/" replace />} />
                             <Route path="/contact" element={<Contact />} />

@@ -1,6 +1,6 @@
 import {db} from "@/firebase.js";
 import { collection, getDocs, query } from "firebase/firestore";
-import type {PhotoAlbum} from "@/Firebase/PhotoAlbum/PhotoAlbum.ts";
+import type {PhotoAlbum} from "@/Firebase/Database/PhotoAlbum/PhotoAlbum.ts";
 import {isDevelopment} from "@/Components/Helpers/IsDevelopment.tsx";
 
 
