@@ -1,6 +1,4 @@
-import {getWebsitePhotoAlbums} from "@/Firebase/Database/PhotoAlbum/PhotoAlbumService.tsx";
 import {useEffect, useState} from "react";
-import type {PhotoAlbum} from "@/Firebase/Database/PhotoAlbum/PhotoAlbum.ts";
 import GenericHeader from "@/Components/GenericSections/GenericHeader/GenericHeader.tsx";
 
 export default function ProjectsPage() {

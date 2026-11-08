@@ -5,9 +5,7 @@ import GenericHeader from "../../Components/GenericSections/GenericHeader/Generi
 import {calculateAge} from "../../Components/Helpers/CalculateAge.tsx";
 import {getArticle} from "../../Components/Helpers/GetNumArticle.tsx";
 import Footer from "@/Components/UIComponents/Footer/Footer.tsx";
-import {getWebsitePhotoAlbums} from "@/Firebase/Database/PhotoAlbum/PhotoAlbumService.tsx";
 import {useEffect, useState} from "react";
-import type {PhotoAlbum} from "@/Firebase/Database/PhotoAlbum/PhotoAlbum.ts";
 
 export default function Homepage() {
     const birthday = new Date(2008, 2, 18);

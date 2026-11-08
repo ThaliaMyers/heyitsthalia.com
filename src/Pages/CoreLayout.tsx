@@ -11,6 +11,7 @@ import {MenuIsClosingProvider} from "../Components/UIComponents/Navigation/Conte
 import {MenuExpandedProvider} from "../Components/UIComponents/Navigation/ContextProviders/MenuExpandedProvider.tsx";
 import PhotographyPage from "@/Pages/Projects/Photography/Photography.tsx";
 import ProjectsPage from "@/Pages/Projects/Projects.tsx";
+import {GenericProjectService} from "@/Firebase/Database/GenericProject/GenericProjectService.ts";
 
 export default function CoreLayout() {
     return (

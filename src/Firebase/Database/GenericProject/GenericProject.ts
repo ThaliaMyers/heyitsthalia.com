@@ -1,18 +1,3 @@
-// id: UUID
-// index: int
-// date: timestamp
-//
-// title: string
-// subtitle: string
-// description: string
-// tags: [string]
-//
-// subpagePath: string
-// urlPath: string
-//
-// creationDate: timestamp
-// modifiedDate: timestamp
-
 /**
  * The universal data type for all projects and post-style data across the website.
  * This includes all projects, interest categories, photo albums, and most other simple data.
